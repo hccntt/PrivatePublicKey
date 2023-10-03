@@ -31,7 +31,7 @@ namespace PrivatePublicKey
             byte[] plainTextBytes = Encoding.UTF8.GetBytes(plainText);
 
             PemReader pr = new PemReader(
-                (StreamReader)File.OpenText("./Key/publicKey.pem")
+                (StreamReader)File.OpenText("./Key/publicKey.pem") // 512 bit
             );
             RsaKeyParameters keys = (RsaKeyParameters)pr.ReadObject();
 
@@ -65,7 +65,7 @@ namespace PrivatePublicKey
             byte[] cipherTextBytes = Convert.FromBase64String(cipherText);
 
             PemReader pr = new PemReader(
-                (StreamReader)File.OpenText("./Key/privateKey.pem")
+                (StreamReader)File.OpenText("./Key/privateKey.pem") // 512 bit
             );
             AsymmetricCipherKeyPair keys = (AsymmetricCipherKeyPair)pr.ReadObject();
 
